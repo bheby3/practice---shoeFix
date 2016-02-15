@@ -1,0 +1,32 @@
+<div class="overlay" ng-show="modal"></div>
+
+<div class="mod" ng-show="modal">
+
+    <div class="modalbox">
+        <button class="button" ng-click="hideProd()">exit</button>
+
+        <div class=""><span class="model">brand:{{viewProd.brand}}</span> &nbsp;&nbsp;
+            <br>
+            <span class="model">offset:{{viewProd.offset}}</span> &nbsp;&nbsp;
+            <br>
+            <span class="model">model:{{viewProd.model}}</span> &nbsp;&nbsp;
+            <br>
+            <span class="model">support:{{viewProd.stability}}</span> &nbsp;&nbsp;
+            <br>
+
+            <div class="style" ng-repeat="style in viewProd.styles">{{style}}</div>
+
+            <a ng-click="showProductDetails(prod)">
+                <img class="item-image-modal profile-card" ng-repeat="img in viewProd.image" ng-src="{{img}}" alt="no img">
+            </a>
+
+            <hr>
+            <span class="price">Price: {{viewProd.price | currency}}</span>
+            <span class="description">{{viewProd.stability}}</span>
+            <br>
+            <span class="description">{{viewProd.description}}</span></div>
+        <button class="button" ng-click="addProductToCart(prod._id)">add product</button>
+
+    </div>
+
+</div>
